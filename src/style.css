@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: 'Permanent Marker', cursive;
+}
+body {
+    background: #cae5ff;
+}
+#blur {
+    text-align: center;
+    font-size: 4rem;
+    color: white;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 0;
+}
+/*======================== BATTLEFIELD START ========================*/
+#battle-field {
+    text-align: center;
+    font-size: 2.5rem;
+}
+#battle-field h1 {
+    margin-bottom: 25px;
+}
+#battle-field h3 {
+    margin-top: 25px;
+    font-size: 1.5rem;
+}
+/*======================== BATTLEFIELD END ========================*/
+/*======================== FORM START ========================*/
+form {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-size: 4rem;
+    z-index: 1;
+    text-align: center;
+}
+form > * {
+    margin: 12px 0px;
+}
+input {
+    font-size: 2rem;
+    width: 300px;
+    padding: 0.25em 0.5em;
+    border-radius: 0.25em;
+}
+button {
+    font-size: 1.5rem;
+    padding: 0.5em 1em;
+    border-radius: 0.25em;
+}
+#winner {
+    display: none;
+    font-size: 2rem;
+}
+/*======================== FORM END ========================*/
+/*======================== FIELDS START ========================*/
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.fields {
+    display: flex;
+    gap: 200px;
+    justify-content: center;
+}
+#player-field,
+#bot-field {
+    display: grid;
+    grid-template-columns: repeat(10, 50px);
+    grid-template-rows: repeat(10, 50px);
+    background-color: #89bbfe;
+    border: 2px solid #6f8ab7;
+    animation-name: fade;
+    animation-duration: 2s;
+}
+#player-field > div,
+#bot-field > div {
+    border: 2px solid #6f8ab7;
+}
+#bot-field > div:hover {
+    background-color: brown !important ;
+    cursor: pointer;
+}
+/*======================== FIELDS END ========================*/
+
+/*======================== CELL STATES START ========================*/
+.attacked {
+    background-image: url('../assets/boom.png');
+    background-size: cover;
+}
+.missed {
+    background-image: url('../assets/miss.png');
+    background-size: cover;
+}
+.ship {
+    background-color: darkblue;
+}
+/*======================== CELL STATES END ========================*/
+/*======================== FOOTER START ========================*/
+#footer {
+    display: flex;
+    width: 100%;
+    /* padding: 1.75em 0em; */
+    justify-content: center;
+    align-items: center;
+}
+/*======================== FOOTER END ========================*/
